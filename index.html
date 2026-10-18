@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07110d">
+  <title>WhatsApp Link Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="logo">✆</div>
+      <p class="eyebrow">SIMPLE • FREE • INSTANT</p>
+      <h1>WhatsApp Link <span>Generator</span></h1>
+      <p class="subtitle">Create a direct chat link from any phone number.</p>
+    </header>
+
+    <section class="panel">
+      <div class="field">
+        <label for="countrySearch">1. Choose country</label>
+        <input id="countrySearch" type="search"
+          placeholder="Search country or calling code...">
+        <select id="country" aria-label="Country"></select>
+        <small>Search by country name or calling code.</small>
+      </div>
+
+      <div class="field">
+        <label for="phone">2. Phone number</label>
+        <div class="phone-row">
+          <div class="calling-code" id="callingCode">+92</div>
+          <input id="phone" type="tel"
+            placeholder="300 1234567" autocomplete="tel-national">
+        </div>
+        <small>Enter the local number without the leading zero, or paste the full international number.</small>
+      </div>
+
+      <div class="field">
+        <label for="message">3. Message <span class="optional">Optional</span></label>
+        <textarea id="message" rows="3"
+          placeholder="Hello! I would like to know more about your services."></textarea>
+      </div>
+
+      <button id="generate" class="primary" type="button">
+        Generate WhatsApp Link ↗
+      </button>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <div id="result" class="result" hidden>
+        <p class="eyebrow">YOUR LINK IS READY</p>
+        <h2>WhatsApp conversation</h2>
+        <input id="generatedLink" class="link-output" readonly>
+        <div class="actions">
+          <button id="copyLink" class="secondary" type="button">
+            Copy Link
+          </button>
+          <button id="openChat" class="primary" type="button">
+            Open WhatsApp ↗
+          </button>
+        </div>
+        <p id="copyStatus" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <footer>
+      Your number and message are processed in your browser.
+      <p>The number must have an active WhatsApp account to open a chat.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
